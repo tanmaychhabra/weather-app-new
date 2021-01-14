@@ -1,22 +1,34 @@
-import React, { Component } from 'react'
-import {FavConsumer} from '../components/Context/FavContext'
+import React, { useContext } from 'react'
+import {FavContext} from '../components/Context/FavContext'
 
-class Favorites extends Component {
+const Favorites = () => {
+
+    const context = useContext(FavContext)
+    console.log(context.favouriteCity)
     
-    render() {
+    return(
+        <div>
+            <h1>Favorite Cities are: </h1>
+            {/* <h1>{context.favouriteCity}</h1> */}
         
-        return (
+        {/* {
             
-            <FavConsumer>
-                {
-                  ({favCityData}) => (
-                        <h1>City: {favCityData.favCity}</h1>
-                    )
+            context.favouriteCity ? (
+                <ul>
+                context.favouriteCity.map((fav) => {
+                    <li>{fav}</li>
                     
                 }
-            </FavConsumer>
-        )
-    }
+                )
+                </ul>
+                
+            ) : (
+                <h1>No cities addded to favorites</h1>
+            )
+        } */}
+        </div>
+    )
+    
 }
 
 export default Favorites

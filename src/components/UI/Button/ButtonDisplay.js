@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardHeader from '@material-ui/core/CardHeader';
 import Typography from '@material-ui/core/Typography';
 //import './Button.css'
-import {FavProvider} from '../../Context/FavContext'
+import {FavContext} from '../../Context/FavContext'
 
 //import {TempProvider} from '../../Context/Context'
 import {Route} from 'react-router-dom'
@@ -70,7 +70,7 @@ const tempData = {
 
         
 
-        <FavProvider value = {tempData}>
+        <FavContext.Provider value = {{favouriteCity}}>
         
         <React.Fragment>
           <Button variant = 'contained' color = 'secondary' onClick = {props.clicked}>SEARCH</Button>
@@ -108,7 +108,7 @@ const tempData = {
             }
 
         </React.Fragment>
-        </FavProvider>
+        </FavContext.Provider>
     )
 }
 
